@@ -83,9 +83,9 @@
 							<name>riveraflores98/${project.build.finalName}</name>
 							<build>
 								<from>openjdk:latest</from>
-								<entryPoint>java -Dspring.profiles.active=prod -jar Users/jesus.rivera.flores/Documents/JEE/application/${project.build.finalName}.jar</entryPoint>
+								<entryPoint>java -Dspring.profiles.active=prod -jar /Users/jesus.rivera.flores/Documents/JEE/application/${project.build.finalName}.jar</entryPoint>
 								<assembly>
-									<basedir>Users/jesus.rivera.flores/Documents/JEE/application/</basedir>
+									<basedir>/Users/jesus.rivera.flores/Documents/JEE/application/</basedir>
 									<descriptorRef>artifact</descriptorRef>
 									<inline>
 									<id>assembly</id>
