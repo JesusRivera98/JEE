@@ -21,7 +21,8 @@ import com.platzi.ereservation.business.services.ClientService;
 import com.platzi.ereservation.view.resources.vo.ClientVO;
 
 /**
- * Class that represents 
+ * Class that represents
+ * 
  * @author jesus.rivera.flores
  *
  */
@@ -38,7 +39,7 @@ public class ClientResource {
 	public ResponseEntity<Client> createClient(@RequestBody ClientVO clientVo) {
 		Client client = new Client();
 		client.setNameCli(clientVo.getNameCli());
-		client.setSurnmeCli(clientVo.getSurnameCli());
+		client.setSurnameCli(clientVo.getSurnameCli());
 		client.setAddressCli(clientVo.getAddressCli());
 		client.setPhoneCli(clientVo.getPhoneCli());
 		client.setEmailCli(clientVo.getEmailCli());
@@ -49,14 +50,14 @@ public class ClientResource {
 	public ResponseEntity<Client> updateClient(@PathVariable("identification") String identification,
 			ClientVO clientVo) {
 
-		Client client = this.clientService.findByIdentificacion(identification);
+		Client client = this.clientService.findByIdentification(identification);
 		if (client == null) {
 			return new ResponseEntity<Client>(HttpStatus.NOT_FOUND);
 		} else {
-			client.setNombreCli(clientVo.getNombreCli());
-			client.setApellidoCli(clientVo.getApellidoCli());
-			client.setDireccionCli(clientVo.getDireccionCli());
-			client.setTelefonoCli(clientVo.getTelefonoCli());
+			client.setNameCli(clientVo.getNameCli());
+			client.setSurnameCli(clientVo.getSurnameCli());
+			client.setAddressCli(clientVo.getAddressCli());
+			client.setPhoneCli(clientVo.getPhoneCli());
 			client.setEmailCli(clientVo.getEmailCli());
 		}
 		return new ResponseEntity<>(this.clientService.update(client), HttpStatus.OK);
@@ -64,7 +65,7 @@ public class ClientResource {
 
 	@DeleteMapping("/{identification}")
 	public void removeClient(@PathVariable("identification") String identification) {
-		Client client = this.clientService.findByIdentificacion(identification);
+		Client client = this.clientService.findByIdentification(identification);
 		if (client != null) {
 			this.clientService.delete(client);
 		}
