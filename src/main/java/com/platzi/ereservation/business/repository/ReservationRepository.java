@@ -27,7 +27,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, String
 	 * @param client
 	 * @return
 	 */
-	@Query("SELECT r FROM Reserva r WHERE r.client =:client")
+	@Query("SELECT r FROM Reservation r WHERE r.client =:client")
 	public List<Reservation> findByClient(Client client);
 	
 	/**
@@ -38,6 +38,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, String
 	 * @param dateExit
 	 * @return
 	 */
-	@Query("SELECT r FROM Reservation r WHERE r.dateEntryRes =:fechaStart  AND r.dateExitRes =:dateExit")
+	@Query("SELECT r FROM Reservation r WHERE r.dateEntryRes =:dateStart  AND r.dateExitRes =:dateExit")
 	public List<Reservation> find(@Param("dateStart") Date dateStart, @Param("dateExit") Date dateExit);
 }

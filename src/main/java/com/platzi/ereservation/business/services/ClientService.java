@@ -13,10 +13,12 @@ import com.platzi.ereservation.business.repository.ClientRepository;
 
 /**
  * Class to define client services
+ * 
  * @author jesus.rivera.flores
  *
  */
 @Service
+@Transactional(readOnly = true)
 public class ClientService {
 	private final ClientRepository clientRepository;
 
@@ -63,29 +65,31 @@ public class ClientService {
 	 * @return
 	 */
 	public Client findByIdentification(String identificationCli) {
-		return this.clientRepository.findByIdentification(identificationCli);
+		return this.clientRepository.findByIdentificationCli(identificationCli);
 	}
-	
+
 	/**
 	 * Method to consult all clients
+	 * 
 	 * @return
 	 */
-	public List<Client> findAll(){
+	public List<Client> findAll() {
 		return this.clientRepository.findAll();
 	}
-	
+
 	/**
 	 * Method to search clients by their last name
+	 * 
 	 * @param surnameCli
 	 * @return
 	 */
-	public List<Client> findBySurnameCli(String surnameCli){
+	public List<Client> findBySurnameCli(String surnameCli) {
 		return this.clientRepository.findBySurnameCli(surnameCli);
 	}
-	
-	
+
 	/**
 	 * Method to search for a client by email account
+	 * 
 	 * @param email
 	 * @return
 	 */

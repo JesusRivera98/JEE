@@ -30,13 +30,13 @@ public interface ClientRepository extends JpaRepository<Client, String>{
 	 * @param identificationCli
 	 * @return
 	 */
-	public Client findByIdentification(String identificationCli);
+	public Client findByIdentificationCli(String identificationCli);
 	
 	/**
 	 * Definition of method to search for a customer by email account
 	 * @param email
 	 * @return
 	 */
-	@Query("SELECT c FROM Client c WUHERE c.emailCli LIKE %:email")
+	@Query("SELECT c FROM Client c WHERE c.emailCli LIKE %:email")
 	public Client findByEmailAccount(@Param("email") String email);
 }
