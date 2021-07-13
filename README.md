@@ -8,7 +8,7 @@ This repository is from Platzi's course ["Hibernate y Java Spring 2018"](https:/
 
 ## General info
 
-In this course we learn how to implement Hibernate and Java Spring in a project developed with Java Enterprise Edition, as a final product we obtain a web application and store it in Docker.
+In this course we learn how to implement Hibernate and Java Spring in a project developed with Java Enterprise Edition, as a final product we obtain a web application and store it in [Docker](https://hub.docker.com/repository/docker/riveraflores98/e-reservation).
 
 
 
