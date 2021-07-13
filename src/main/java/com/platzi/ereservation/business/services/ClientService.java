@@ -6,6 +6,7 @@ package com.platzi.ereservation.business.services;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.platzi.ereservation.model.Client;
 import com.platzi.ereservation.business.repository.ClientRepository;
@@ -29,6 +30,7 @@ public class ClientService {
 	 * @param client
 	 * @return
 	 */
+	@Transactional
 	public Client create(Client client) {
 		return this.clientRepository.save(client);
 	}
@@ -39,6 +41,7 @@ public class ClientService {
 	 * @param client
 	 * @return
 	 */
+	@Transactional
 	public Client update(Client client) {
 		return this.clientRepository.save(client);
 	}
@@ -48,6 +51,7 @@ public class ClientService {
 	 * 
 	 * @param client
 	 */
+	@Transactional
 	public void delete(Client client) {
 		this.clientRepository.delete(client);
 	}
